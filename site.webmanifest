@@ -1,0 +1,15 @@
+﻿{
+  "name": "Drain Cleaning Advisor",
+  "short_name": "Drain Advisor",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1E33",
+  "theme_color": "#0B1E33",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

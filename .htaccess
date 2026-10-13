@@ -1,0 +1,38 @@
+﻿# ==============================================================================
+# Apache Configuration: Clean URLs, Legacy 301 Redirects & Custom 404 Error Page
+# ==============================================================================
+RewriteEngine On
+RewriteBase /
+
+# 1. Custom 404 Error Document
+ErrorDocument 404 /404.html
+
+# 2. Redirect Legacy Subfolder Paths to Clean URLs (Prevent 404s)
+RewriteRule ^services/sewer-cleaning/?$ /sewer-cleaning [R=301,L,NC]
+RewriteRule ^services/drain-snaking-cabling/?$ /drain-snaking-cabling [R=301,L,NC]
+RewriteRule ^services/hydro-jetting/?$ /hydro-jetting [R=301,L,NC]
+RewriteRule ^services/?$ /services [R=301,L,NC]
+
+RewriteRule ^service-areas/old-naples-fl/?$ /old-naples [R=301,L,NC]
+RewriteRule ^service-areas/pelican-bay-fl/?$ /pelican-bay [R=301,L,NC]
+RewriteRule ^service-areas/port-royal-fl/?$ /port-royal [R=301,L,NC]
+RewriteRule ^service-areas/?$ /service-areas [R=301,L,NC]
+RewriteRule ^locations/?$ /service-areas [R=301,L,NC]
+
+RewriteRule ^about/?$ /about [R=301,L,NC]
+RewriteRule ^contact/?$ /contact [R=301,L,NC]
+RewriteRule ^privacy-policy/?$ /privacy-policy [R=301,L,NC]
+RewriteRule ^thank-you/?$ /thank-you [R=301,L,NC]
+
+# 3. Clean URLs: Serve .html file if request doesn't match an actual file or directory
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# 4. Security & Caching Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
