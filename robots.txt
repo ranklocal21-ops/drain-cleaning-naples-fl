@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Canonical Sitemap
-Sitemap: https://draincleaningnaplesflorida.com/sitemap.xml
+Sitemap: https://drain-cleaning-naples-fl-five.vercel.app/sitemap.xml
