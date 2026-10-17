@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Drain Cleaning Advisor - Interactive Frontend Logic
  * Naples, FL | +1 (239) 688-0557
  */
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Determine correct path to thank you page based on directory depth
         var currentPath = window.location.pathname;
-        var thankYouUrl = '/thank-you/';
+        var thankYouUrl = '/thank-you';
         if (window.location.protocol === 'file:') {
           // If viewing locally via file://, navigate relatively
           var depth = (currentPath.match(/\//g) || []).length;

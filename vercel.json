@@ -1,3 +1,135 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/locations",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations.html",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/old-naples-fl",
+      "destination": "/old-naples",
+      "permanent": true
+    },
+    {
+      "source": "/old-naples-fl.html",
+      "destination": "/old-naples",
+      "permanent": true
+    },
+    {
+      "source": "/pelican-bay-fl",
+      "destination": "/pelican-bay",
+      "permanent": true
+    },
+    {
+      "source": "/pelican-bay-fl.html",
+      "destination": "/pelican-bay",
+      "permanent": true
+    },
+    {
+      "source": "/port-royal-fl",
+      "destination": "/port-royal",
+      "permanent": true
+    },
+    {
+      "source": "/port-royal-fl.html",
+      "destination": "/port-royal",
+      "permanent": true
+    },
+    {
+      "source": "/service-areas/old-naples-fl",
+      "destination": "/old-naples",
+      "permanent": true
+    },
+    {
+      "source": "/service-areas/pelican-bay-fl",
+      "destination": "/pelican-bay",
+      "permanent": true
+    },
+    {
+      "source": "/service-areas/port-royal-fl",
+      "destination": "/port-royal",
+      "permanent": true
+    },
+    {
+      "source": "/services/sewer-cleaning",
+      "destination": "/sewer-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/services/drain-snaking-cabling",
+      "destination": "/drain-snaking-cabling",
+      "permanent": true
+    },
+    {
+      "source": "/services/hydro-jetting",
+      "destination": "/hydro-jetting",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
 }
